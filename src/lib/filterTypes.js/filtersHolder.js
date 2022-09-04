@@ -56,18 +56,18 @@ export class filtersHolder {
   quaryParamsSendToApi = () => {
     if (this.values.length == 0) return;
     const body = {};
-    const values = "";
-    this.values.map((value, ind) => {
-      if (ind != 0 && ind != this.values.length) values += ",";
-      values += value;
-    });
-    body[this.key] = values;
+    // const values = "";
+    // this.values.map((value, ind) => {
+    //   if (ind != 0 && ind != this.values.length) values += ",";
+    //   values += value;
+    // });
+    body[this.key] = this.values;
+
     return body;
   };
 
   handleReadQuary = (values) => {
     const newvalues = values.split(",");
-    console.log("newvalues", newvalues);
 
     this.inputsData.inputdata.map((input) => {
       if (

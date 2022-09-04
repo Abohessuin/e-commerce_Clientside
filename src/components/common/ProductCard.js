@@ -69,7 +69,7 @@ const ProductCardContainer = styled.div`
         font-weight: 700;
         font-size: 16px;
         line-height: 16px;
-        color: brown;
+        color: rgb(61, 46, 41);
         margin: 0px !important;
       }
       .rate {
@@ -85,7 +85,7 @@ const ProductCardContainer = styled.div`
       font-size: 14px;
       line-height: 16px;
 
-      color: brown;
+      color: rgb(61, 46, 41);
     }
     .price {
       font-family: Roboto;
@@ -93,8 +93,11 @@ const ProductCardContainer = styled.div`
       font-weight: 700;
       font-size: 16px;
       line-height: 16px;
-      color: brown;
+      color: rgb(61, 46, 41);
     }
+  }
+  @media screen and (max-width: 800px) {
+    margin: 0 auto;
   }
 `;
 

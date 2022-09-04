@@ -46,10 +46,6 @@ const AppliedFiltersContainer = styled.div`
     color: #0c314e;
   }
   @media (max-width: 768px) {
-    margin-bottom: 15px;
-    :first-child {
-      margin-left: 15px;
-    }
     p {
       font-size: 14px;
       line-height: 17px;

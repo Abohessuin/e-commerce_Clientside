@@ -2,7 +2,6 @@ import { getSizeFiltersInput, prepareFilterInputs } from "../reduxHelper";
 
 export const handlePreparingFiltersInputsData = () => (dispatch) => {
   const filtersInput = prepareFilterInputs();
-  console.log("filtersInput", filtersInput);
 
   dispatch({
     type: "ADD_INPUTS_FILTERS_DATA",

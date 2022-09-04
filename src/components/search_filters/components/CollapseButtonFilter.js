@@ -7,6 +7,7 @@ import {
   handleAddFilters,
   handleClearAFilter,
 } from "../../../../redux/actions/filterAction";
+import { handleChangeLoadingStatues } from "../../../../redux/actions/searchresultsAction";
 const CollapseButtonFilter = ({
   filtername,
   tempFilters,
@@ -23,6 +24,7 @@ const CollapseButtonFilter = ({
   }, [isOpen]);
   // console.log(tempFilters);
   const handleAddAppliedFilters = () => {
+    dispatch(handleChangeLoadingStatues());
     dispatch(handleAddFilters(tempFilters));
     setTempFilters([]);
     setIsOpen(false);
@@ -133,6 +135,15 @@ const CollapseButtonFilterContainer = styled.div`
           }
         }
       }
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .filtermenu {
+      min-width: unset !important;
+      width: 250px;
+      position: absolute !important;
+      top: 43px !important;
+      left: -50px !important;
     }
   }
 `;

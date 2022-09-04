@@ -6,16 +6,20 @@ const intialState = {
 };
 
 const searchresultsReducer = (state = intialState, action) => {
-  let newState;
   switch (action.type) {
     case "GET_SEARCH_RESULTS":
       return {
-        filteredsearchdata: [],
-        searchdatacount: 0,
+        filteredsearchdata: [...action.payload.filteredsearchdata],
+        searchdatacount: action.payload.searchdatacount,
         filteredqueryurl: action.payload.filteredqueryurl,
-        isfilteredsearchdataready: true,
+        isfilteredsearchdataready: action.payload.isfilteredsearchdataready,
       };
 
+    case "CHANGE_LOADING_STATUES":
+      return {
+        ...state,
+        isfilteredsearchdataready: true,
+      };
     default:
       return { ...state };
   }

@@ -20,7 +20,6 @@ export const addNewFilters = (state, filters) => {
 
 export const handleSetFiltersQuery = (state, query) => {
   for (const key in query) {
-    console.log(key);
     state[key].handleReadQuary(query[key]);
   }
   return state;
@@ -34,7 +33,6 @@ export const handleResetFilters = (state) => {
 };
 
 export const handleResetAFilter = (state, filterKey) => {
-  console.log("fff", filterKey);
   state[filterKey].resetAllValues();
   return state;
 };
@@ -51,13 +49,12 @@ export const objToQuery = (filters) => {
   const ind = 0;
   Object.entries(filters).forEach(([key, value], index) => {
     if (filters[key].buildFilterUrlQuary()) {
-      console.log(index);
       if (ind != 0) url += "&";
       ind++;
       url += filters[key].buildFilterUrlQuary();
     }
     if (filters[key].quaryParamsSendToApi()) {
-      body = { ...filters[key].quaryParamsSendToApi() };
+      body = { ...body, ...filters[key].quaryParamsSendToApi() };
     }
   });
 

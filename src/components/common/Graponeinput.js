@@ -32,7 +32,7 @@ const Graponeinput = ({
       </button>
     );
   };
-  console.log("alreadysetted", alreadySettedValue, grapedid);
+
   return (
     <GrapOneContainer locale={locale} data-cy="grap-one">
       {grapedoptions &&

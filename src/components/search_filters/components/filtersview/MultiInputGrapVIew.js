@@ -2,13 +2,17 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Graponeinput2 } from "../../../common/Graponeinput2";
 
-const MultiGrapInputView = ({ filterkey, setTempFilters }) => {
+const MultiGrapInputView = ({
+  filterkey,
+  setTempFilters,
+  tempFilters,
+  isOpen,
+}) => {
   const [settedValue, setSettedValue] = useState([]);
   const [onChange, SetOnChange] = useState([]);
   const filters = useSelector((state) => state.searchFilters.subscribedFilters);
   const grapedOptions =
     filters && filters[filterkey] && filters[filterkey].inputsData.inputdata;
-
   useEffect(() => {
     filters &&
       filters[filterkey].values &&
@@ -16,7 +20,11 @@ const MultiGrapInputView = ({ filterkey, setTempFilters }) => {
   }, [filters]);
 
   useEffect(() => {
-    setTempFilters([...onChange]);
+    if (!isOpen) {
+      setTempFilters([...onChange]);
+    } else {
+      tempFilters && setTempFilters([...onChange, ...tempFilters]);
+    }
   }, [onChange]);
 
   return (

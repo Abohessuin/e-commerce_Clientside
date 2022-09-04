@@ -39,7 +39,7 @@ const SearchFilterContainer = styled.section`
       font-weight: 700;
       font-size: 40px;
       line-height: 1.1067708333333333vw;
-      color: #0c314e;
+      color: rgb(61, 46, 41);
     }
   }
   .searchfilter {
@@ -48,6 +48,16 @@ const SearchFilterContainer = styled.section`
     left: 0px;
     background-color: white;
     z-index: 1;
+  }
+
+  @media screen and (max-width: 800px) {
+    .upperintro {
+      height: 20vh;
+
+      p {
+        font-size: 30px;
+      }
+    }
   }
 `;
 
