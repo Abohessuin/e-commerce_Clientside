@@ -1,22 +1,5 @@
-# Next.js + Three.js load GLTF models
+# How Filters work
 
-![Alt text](readme/three_in_next.gif?raw=true "Title")
+   filters is keys and each is type of filter called filter holder which is class and encapsulated with all logic it need for it for building quary or        build body and why using classes to always make our code extandable not always need to use if or change in it if i need to change i will either extend
+   type of filter holder (key) or change in it and we preserve SOLID princple by this espcially open/close one 
 
-Example of how to upload GLTF models in Next.js application. Made for the [article](https://oslavdev.medium.com/load-animated-gltf-models-in-next-js-app-with-three-js-8cf0a5d99e10) on Medium.
-
-## How to run
-
-```sh
-$ npm run watch
-
-```
-
-to start typescript watcher
-
-```sh
-$ npm run dev
-```
-
-to start development server
-
-the app will run on http://localhost:3001/
