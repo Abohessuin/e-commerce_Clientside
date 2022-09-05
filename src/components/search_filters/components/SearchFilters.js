@@ -98,6 +98,7 @@ const SearchFilters = () => {
             filtername={"Price"}
             tempFilters={tempFilters}
             setTempFilters={setTempFilters}
+            filterkey={"price"}
           >
             <SingleGrapInputView
               filterkey={"price"}
