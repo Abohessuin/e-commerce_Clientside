@@ -11,13 +11,16 @@
     "watch": "tsc -watch",
     "dev": "next dev -p 3001",
     "build": "next build",
-    "start": "next start -p 8000"
+    "start": "next start -p 8000",
+    "cypress": "cypress open --env host=http://127.0.0.1:3001",
+    "cypress:headless": "cypress run  --env host=http://127.0.0.1:3001"
   },
   "dependencies": {
     "@next/bundle-analyzer": "^12.1.6",
     "@react-three/drei": "^9.11.3",
     "@react-three/fiber": "^8.0.19",
     "axios": "^0.27.2",
+    "cypress": "^9.6.0",
     "gsap": "^3.10.4",
     "next": "^12.1.6",
     "next-redux-wrapper": "^7.0.5",

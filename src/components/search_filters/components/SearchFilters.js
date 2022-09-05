@@ -48,6 +48,7 @@ const SearchFilters = () => {
     );
   }, [theQueryFilter]);
   // to read from query if there is filters in query
+  console.log(tempFilters);
   useEffect(() => {
     if (query && urlLoadQueryFirstRender.current) {
       if (Object.keys(query).length > 0) {

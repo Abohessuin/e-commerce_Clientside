@@ -6,6 +6,7 @@ const Graponeinput2Memod = ({
   grapedoptions,
   onChangeOptions,
   alreadySettedValue,
+  settedFiltersObj,
 }) => {
   const { locale } = useRouter();
   const [grapedid, SetGrapedId] = useState(["All"]);
@@ -33,12 +34,14 @@ const Graponeinput2Memod = ({
 
   useEffect(() => {
     if (alreadySettedValue && alreadySettedValue.length > 0) {
+      console.log("sss", settedFiltersObj);
       SetGrapedId([...alreadySettedValue]);
+      setResult([...settedFiltersObj]);
     } else {
       SetGrapedId(["All"]);
     }
-  }, [alreadySettedValue]);
-  // console.log("alreadysetted", alreadySettedValue, grapedid);
+  }, [alreadySettedValue, settedFiltersObj]);
+  console.log("alreadysetted", settedFiltersObj, result);
   return (
     <GrapOneContainer locale={locale} data-cy="grap-one">
       {grapedoptions &&

@@ -9,6 +9,7 @@ const MultiGrapInputView = ({
   isOpen,
 }) => {
   const [settedValue, setSettedValue] = useState([]);
+  const [settedFiltersObj, setSettedFiltersObj] = useState([]);
   const [onChange, SetOnChange] = useState([]);
   const filters = useSelector((state) => state.searchFilters.subscribedFilters);
   const grapedOptions =
@@ -16,10 +17,12 @@ const MultiGrapInputView = ({
   useEffect(() => {
     filters &&
       filters[filterkey].values &&
-      setSettedValue([...filters[filterkey].values]);
+      setSettedValue([...filters[filterkey].values]) &&
+      setSettedFiltersObj(filters[filterkey].filteredValues);
   }, [filters]);
 
   useEffect(() => {
+    console.log(isOpen, "onChange", onChange);
     if (!isOpen) {
       setTempFilters([...onChange]);
     } else {
@@ -33,6 +36,7 @@ const MultiGrapInputView = ({
         grapedoptions={grapedOptions}
         onChangeOptions={SetOnChange}
         alreadySettedValue={settedValue}
+        settedFiltersObj={settedFiltersObj}
       />
     </>
   );

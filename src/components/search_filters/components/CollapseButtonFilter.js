@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FaChevronDown } from "react-icons/fa";
 import { useState } from "react";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import {
   handleAddFilters,
   handleClearAFilter,
@@ -16,6 +16,9 @@ const CollapseButtonFilter = ({
   children,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const filters = useSelector((state) => state.searchFilters.subscribedFilters);
+  const countfilter =
+    filters && filters[filterkey] && filters[filterkey].values;
   const dispatch = useDispatch();
   useEffect(() => {
     if (!isOpen) {
@@ -34,12 +37,21 @@ const CollapseButtonFilter = ({
     setTempFilters([]);
     setIsOpen(false);
   };
-
+  console.log(
+    "counter",
+    filters[filterkey] && filters[filterkey].values,
+    filterkey
+  );
   return (
     <CollapseButtonFilterContainer isOpen={isOpen}>
       <div className="filtercontainer">
         <button className="filtername" onClick={() => setIsOpen(!isOpen)}>
-          {filtername} <FaChevronDown className="arrowicon" />
+          {filtername}{" "}
+          <span>
+            {" "}
+            {countfilter && countfilter.length > 0 && `(${countfilter.length})`}
+          </span>
+          <FaChevronDown className="arrowicon" />
         </button>
         <div className="filtermenu">
           {children}
@@ -70,6 +82,10 @@ const CollapseButtonFilterContainer = styled.div`
       line-height: 16px;
       background-color: white;
       color: #0c314e;
+      span {
+        font-size: 12px;
+        margin: 0px 2px;
+      }
       .arrowicon {
         margin: 0px 10px 0px 22px;
       }

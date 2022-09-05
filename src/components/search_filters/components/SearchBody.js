@@ -16,7 +16,7 @@ const SearchBody = () => {
   const searchresults = useSelector((state) => state.searchResults);
   const [appliedfilters, setAppliedFilters] = useState([]);
   const [loadProducts, setLoadProducts] = useState([]);
-  const [isLoading, setisLoading] = useState(false);
+  const [isLoading, setisLoading] = useState(true);
 
   useEffect(() => {
     if (filters) {
@@ -117,13 +117,13 @@ const SearchBodyContainer = styled.div`
     padding: 22px 0px;
     margin-top: 20px;
 
-    width: 99%;
+    width: 98%;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px 16px;
+    gap: 16px 28px;
   }
   @media screen and (max-width: 800px) {
     .appliedfiltersbar {

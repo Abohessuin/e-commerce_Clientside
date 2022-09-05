@@ -4,7 +4,7 @@ const ProductCard = ({ product }) => {
   return (
     <ProductCardContainer>
       <div className="upperblock">
-        <img src={product.image} />
+        <img src={product.image_path} />
       </div>
 
       <div className="lowerblock">

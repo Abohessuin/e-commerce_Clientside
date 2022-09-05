@@ -6,13 +6,13 @@ export const handleFetchSearchResults = (filters) => async (dispatch) => {
   const { body, query } = objToQuery(filters);
   console.log("body", body, "query", query);
   const SEARCHAPI_URL = getproductsSearchEndPoint();
-  // const { data } = await axios.post(SEARCHAPI_URL, body);
-  // console.log("data", data);
+  const { data } = await axios.post(SEARCHAPI_URL, body);
+  console.log("data", data);
 
   dispatch({
     type: "GET_SEARCH_RESULTS",
     payload: {
-      filteredsearchdata: [],
+      filteredsearchdata: data,
       searchdatacount: 0,
       filteredqueryurl: query,
       isfilteredsearchdataready: false,

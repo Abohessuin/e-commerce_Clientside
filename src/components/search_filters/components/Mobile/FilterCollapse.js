@@ -8,6 +8,7 @@ const FilterCollapse = ({ filterType, SetIsOpen, isopen, }) => {
       onClick={() => {
         SetIsOpen(!isopen);
       }}
+      id="filtercollabsetest"
       locale={locale}
     >
       <h1>{filterType}</h1>
