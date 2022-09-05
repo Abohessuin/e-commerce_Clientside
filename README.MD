@@ -17,7 +17,7 @@
    
 #  Important Url
       1-Deploy front end on netlify:
-        https://iqvia.netlify.app/search
+        https://eccomm.netlify.app/search
    
       2-Deploy back end on horuko heroku and repo link for endpoint:
         https://github.com/Abohessuin/e-commerce_API
@@ -31,7 +31,7 @@
    
 
 ## Site URL 
-  https://iqvia.netlify.app/search
+  https://eccomm.netlify.app/search
 
 ## note
   not home pgae redirect to /search
