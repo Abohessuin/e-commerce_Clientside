@@ -43,10 +43,10 @@ export const handleClearAnAppliedFilter = (state, data) => {
 };
 export const objToQuery = (filters) => {
   if (!filters) return;
-  const body = {};
-  const url = "";
-  const ll = Object.keys(filters).length - 1;
-  const ind = 0;
+  let body = {};
+  let url = "";
+  let ll = Object.keys(filters).length - 1;
+  let ind = 0;
   Object.entries(filters).forEach(([key, value], index) => {
     if (filters[key].buildFilterUrlQuary()) {
       if (ind != 0) url += "&";

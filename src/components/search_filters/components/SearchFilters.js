@@ -198,7 +198,7 @@ const SearchFilters = () => {
         </CollapseButtonFilter>
       </div>
       <button
-        className="morefilters"
+        className="morefilters morefilterstest"
         onClick={() => setIsOpenModal(!isOpenModal)}
       >
         Filters
